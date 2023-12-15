@@ -1,10 +1,18 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Snippet,
+} from "@nextui-org/react";
 
 interface Memo {
   from: string;
-  timestamp: number;
+  timestamp: bigint;
   name: string;
   message: string;
 }
@@ -15,26 +23,44 @@ interface MemoComponentProps {
 
 export function MemoComponent(props: MemoComponentProps) {
   const { memos } = props;
+  const sortedMemos = [...memos].sort(
+    (a, b) => Number(b.timestamp) - Number(a.timestamp)
+  );
+  const lastThreeMemos = sortedMemos.slice(0, 3);
 
   return (
-    <div>
-      <h1>Memos</h1>
-      {memos && memos.length === 0 ? (
+    <>
+      <h2 className="my-4 font-bold text-xl">Last three memos</h2>
+      {lastThreeMemos && lastThreeMemos.length === 0 ? (
         <p>No memos available.</p>
       ) : (
-        memos?.map((memo, index) => (
-          <div key={index}>
-            <p>From: {memo.from}</p>
-            <p>
-              Timestamp:
-              {new Date(Number(memo.timestamp) * 1000).toLocaleString()}
-            </p>
-            <p>Name: {memo.name}</p>
-            <p>Message: {memo.message}</p>
-            <hr />
-          </div>
+        lastThreeMemos?.map((memo, index) => (
+          <Card
+            key={index}
+            className="mb-4 text-small font-medium leading-none text-default-600"
+          >
+            <CardHeader>
+              <p>Name: {memo.name}</p>
+            </CardHeader>
+            <Divider />
+            <CardBody>
+              <p>Message: {memo.message}</p>
+            </CardBody>
+            <Divider />
+            <CardBody>
+              <p className="text-left">
+                Date: {new Date(Number(memo.timestamp) * 1000).toLocaleString()}
+              </p>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <Snippet symbol="" color="default">
+                {memo.from}
+              </Snippet>
+            </CardFooter>
+          </Card>
         ))
       )}
-    </div>
+    </>
   );
 }
