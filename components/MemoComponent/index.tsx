@@ -37,7 +37,7 @@ export function MemoComponent(props: MemoComponentProps) {
         lastThreeMemos?.map((memo, index) => (
           <Card
             key={index}
-            className="mb-4 text-small font-medium leading-none text-default-600"
+            className="mb-7 text-small max-w-[220px] font-medium leading-none text-default-600"
           >
             <CardHeader>
               <p>Name: {memo.name}</p>
@@ -48,16 +48,10 @@ export function MemoComponent(props: MemoComponentProps) {
             </CardBody>
             <Divider />
             <CardBody>
-              <p className="text-left">
+              <p>
                 Date: {new Date(Number(memo.timestamp) * 1000).toLocaleString()}
               </p>
             </CardBody>
-            <Divider />
-            <CardFooter>
-              <Snippet symbol="" color="default">
-                {memo.from}
-              </Snippet>
-            </CardFooter>
           </Card>
         ))
       )}

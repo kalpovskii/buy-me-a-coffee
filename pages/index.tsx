@@ -101,7 +101,7 @@ const Home: NextPage = () => {
         <Divider className="mb-10 max-w-[450px]" />
         <ConnectButton />
         <form>
-          <Card className="my-6 min-w-[440px]">
+          <Card className="my-6">
             <CardBody className="flex flex-col gap-4">
               <Input
                 label="Name"
