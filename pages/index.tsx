@@ -93,7 +93,7 @@ const Home: NextPage = () => {
           className="mb-10"
           isBlock
           showAnchorIcon
-          href="#"
+          href="https://github.com/kalpovskii/buy-me-a-coffee/tree/main"
           color="foreground"
         >
           See on Github
