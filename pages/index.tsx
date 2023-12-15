@@ -69,15 +69,14 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Buy me a coffee App</title>
+        <title>Buy me a Сoffee</title>
         <meta
           content="Buy Me a Coffee on Sepolia is a decentralized tipping platform where
           users can send a small contribution of 0.001 sETH"
           name="description"
         />
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/coffee.png" rel="icon" type="image/png" />
       </Head>
-
       <main className={styles.main}>
         <h1 className="font-bold text-lg mb-3">By me a Coffee</h1>
         <p className="max-w-md mb-2 text-justify">
@@ -124,6 +123,7 @@ const Home: NextPage = () => {
             </CardBody>
           </Card>
         </form>
+
         {isError && (
           <Chip color="danger" radius="sm">
             An error has occurred. Try again!
@@ -139,6 +139,7 @@ const Home: NextPage = () => {
         <MemoComponent memos={supplyData} />
       </main>
 
+      {/* TODO: create footer component */}
       <footer className={styles.footer}>
         <h2 className="mb-3 text-semibold">Key Technologies:</h2>
         <div className="flex gap-2">
