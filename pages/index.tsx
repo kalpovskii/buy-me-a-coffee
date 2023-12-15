@@ -2,7 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import abi from "../protocol/artifacts/contracts/BuyMeACoffee.sol/BuyMeACoffee.json";
+import abi from "../utils/BuyMeACoffee.json";
 import { useEffect, useState } from "react";
 import { useContractWrite, useContractRead } from "wagmi";
 import { parseEther } from "viem";
