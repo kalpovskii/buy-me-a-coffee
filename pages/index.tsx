@@ -84,9 +84,9 @@ const Home: NextPage = () => {
           users can send a small contribution of 0.001 sETH (Sepolia Ethereum)
           to show appreciation or support to content creators. <br /> The
           process is simple — users enter their desired contribution, along with
-          their name and a personalized message. The sender's name and message
-          are then displayed in a list, creating a public acknowledgment of the
-          support received.
+          their name and a personalized message. The sender&apos;s name and
+          message are then displayed in a list, creating a public acknowledgment
+          of the support received.
         </p>
         <Link
           isExternal
